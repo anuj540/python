@@ -204,16 +204,16 @@
 
 
 
-password = (input("enter your password")) # Change this to a string
+# password = (input("enter your password")) # Change this to a string
 
-if any(char.isupper() for char in password): 
- if len(password) > 5:
+# if any(char.isupper() for char in password): 
+#  if len(password) > 5:
 
-    if any(char in "!@#$%^&*()_+-=[]{}|;:,.<>?/~" for char in password):
-        print("you are login sucessfull ")
-    else:
-        print("please enter a special character")
- else:
-    print("your password is less than 5 characters")
-else:
-   print("please first letter is Upper case")    
+#     if any(char in "!@#$%^&*()_+-=[]{}|;:,.<>?/~" for char in password):
+#         print("you are login sucessfull ")
+#     else:
+#         print("please enter a special character")
+#  else:
+#     print("your password is less than 5 characters")
+# else:
+#    print("please first letter is Upper case")    
