@@ -42,14 +42,15 @@ print("press 4 to exit")
 while runing:
  choice  = int(input("Enter your choice: "))
 if choice == 1:
-        show_balance()
+    show_balance()
 elif choice == 2:
           balance += deposit()
 elif choice == 3:
         balance -= withdraw()
-    elif choice == 4:
+    
+elif choice == 4:
         runing = False
-    else:
+else:
         print("Invalid choice, please try again.")
  
     

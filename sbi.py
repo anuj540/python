@@ -92,10 +92,12 @@ class BankAccount:
             print("\nChoose an option:")
             print("1. Deposit")
             print("2. Withdraw")
-            print("3. Transaction History")  
-            print("4. Account Creation Date")
-            print("5. Show Profile")
-            print("6. Logout")
+            print("3. Transfer")
+            print("4. Check Balance")
+            print("5. Transaction History")  
+            print("6. Account Creation Date")
+            print("7. Show Profile")
+            print("8. Logout")
 
             choice = input("Enter your choice: ")
 
@@ -166,6 +168,34 @@ class BankAccount:
         print(f" Account Type: {self.choose_account_type[username]}")
         print(f" Balance: {self.balances[username]}")
         input("Press Enter to continue...")
+    def transfer(self, username):
+        amount = float(input("Enter the amount you want to transfer: "))
+        if amount > 0:
+            if amount <= self.balances[username]:
+                self.balances[username] -= amount
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  
+                self.history[username].append(f"{timestamp} - Transfered ₹{amount}")  
+                print(f" {amount} transfered successfully on {timestamp}.")
+                      
+                print(" Insufficient funds.")
+        else:
+            print(" Transfer amount must be positive.")
+
+        input("Press Enter to continue...")
+
+        def show_history(self, username):
+            print("\n Transaction History:")
+            if self.history[username]:  
+                for transaction in self.history[username]:
+                    print(f"- {transaction}")  
+            else:
+                print(" No transactions yet.")
+
+            input("Press Enter to continue...")
+
+            def check_balance(self, username):
+                print(f" Your current balance is: {self.balances[username]}")
+                input("Press Enter to continue...")
 
 
 account = BankAccount()
@@ -187,3 +217,4 @@ while True:
         break
     else:
         print(" Invalid option. Please choose again.")
+
